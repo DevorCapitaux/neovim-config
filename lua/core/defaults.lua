@@ -35,8 +35,21 @@ M.on_attach = function(client, bufnr)
   -- Enable autoformatting
   if client.supports_method('textDocument/formatting') and vim.g.autoformat then
     local filetype = vim.api.nvim_get_option_value('filetype', { buf = bufnr })
+    -- If autoformat is a table, only apply autoformat for specified filetypes
+    if type(vim.g.autoformat) == 'table' then
+      local specified = false
+      for _, ft in pairs(vim.g.autoformat) do
+        if ft == filetype then
+          specified = true
+          break
+        end
+      end
+      if not specified then
+        return
+      end
+    end
     -- If the filetype is in the ignore list then return
-    for _, ft in pairs(vim.g.autoformat_ignore) do
+    for _, ft in pairs(vim.g.autoformat_ignore or {}) do
       if ft == filetype then
         return
       end

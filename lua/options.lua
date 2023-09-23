@@ -6,8 +6,12 @@ local g = vim.g
 g.colorscheme = 'catppuccin'
 g.mapleader = ' '
 
--- TODO:
--- g.autoformat_enabled = true
+-- Set autoformat to true to enable it for all available filetypes
+-- or to a table to use it only for specified filetypes
+-- g.autoformat = true
+g.autoformat = { 'rust', }
+-- Use autoformat_ignore to exclude filetypes from autoformat list
+-- g.autoformat_ignore = { 'cs', 'c', }
 
 opt.number = true
 opt.relativenumber = true
