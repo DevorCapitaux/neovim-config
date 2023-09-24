@@ -13,11 +13,11 @@ return {
 
     ['<leader>l'] = { name = 'Lsp' },
     ['<leader>lh'] = { vim.lsp.buf.hover, desc = 'Hover' },
-    ['<leader>lD'] = { vim.lsp.buf.declaration, desc = 'Some declaration' },
-    ['<leader>ld'] = { vim.lsp.buf.definition, desc = 'Some definition' },
-    ['<leader>li'] = { vim.lsp.buf.implementation, desc = 'Some implementation' },
-    ['<leader>lR'] = { vim.lsp.buf.references, desc = 'Some references' },
-    ['<leader>ls'] = { vim.lsp.buf.signature_help, desc = 'Some signature_help' },
+    ['<leader>lD'] = { vim.lsp.buf.declaration, desc = 'Show declaration' },
+    ['<leader>ld'] = { vim.lsp.buf.definition, desc = 'Show definition' },
+    ['<leader>li'] = { vim.lsp.buf.implementation, desc = 'Show implementation' },
+    ['<leader>lR'] = { vim.lsp.buf.references, desc = 'Show references' },
+    ['<leader>ls'] = { vim.lsp.buf.signature_help, desc = 'Show signature_help' },
     ['<leader>lr'] = { vim.lsp.buf.rename, desc = 'Rename' },
     ['<leader>la'] = { vim.lsp.buf.code_action, desc = 'Code action' },
     ['<leader>ll'] = { vim.diagnostic.open_float, desc = 'Show diagnostic info' },
@@ -25,4 +25,7 @@ return {
     ['<leader>lp'] = { vim.diagnostic.goto_prev, desc = 'Show prev diagnostic' },
     ['<leader>lf'] = { vim.lsp.buf.format, desc = 'Format buffer' },
   },
+  i = {
+    ['<C-k>'] = { vim.lsp.buf.signature_help, desc = 'Show signature_help' },
+  }
 }

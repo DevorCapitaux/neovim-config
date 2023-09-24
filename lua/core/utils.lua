@@ -93,6 +93,7 @@ U.load_plugin_manager = function()
     { import = 'plugins' },
     { import = 'plugins.ui' },
     { import = 'plugins.lsp' },
+    { import = 'plugins.lsp.addons' },
     { import = 'plugins.completions' },
     { import = 'plugins.dap' },
   }, defaults.lazy_opts)

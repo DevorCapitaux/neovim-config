@@ -47,7 +47,7 @@ return {
     )
 
     -- Set rounded border for the sig_help popup
-    vim.lsp.handlers['textDocument/signature_help'] = vim.lsp.with(
+    vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
       vim.lsp.handlers.signature_help,
       { border = 'rounded' }
     )
@@ -56,7 +56,6 @@ return {
     -- LSP Servers configurations
     ------------------------------------------------------------
     lspconfig.clangd.setup {}         -- C & C++
-    lspconfig.rust_analyzer.setup {}  -- Rust
     lspconfig.asm_lsp.setup {}        -- Assembly
     lspconfig.bashls.setup {}         -- Bash
     lspconfig.pyright.setup {}        -- Python
